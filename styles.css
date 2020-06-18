@@ -1,0 +1,59 @@
+/* BULMA CSS */
+@import './node_modules/bulma/css/bulma-rtl.css';
+@import './node_modules/bulma/css/bulma-rtl.min.css';
+@import './node_modules/bulma/css/bulma.css';
+@import './node_modules/bulma/css/bulma.min.css';
+
+.jumboAddAlign {
+    display: flex;
+    flex-direction: column;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    background-color: black;
+    border-radius: 0;
+}
+
+#addtoDone {
+    text-align: center;    
+}
+
+.sectionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    /* width: 100vw; */
+    background-color: red;
+}
+
+.inputLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* TABLES */
+.peopleTables {
+    /* display: flex; */
+    /* flex-direction: row; */
+    margin: 1em;
+    padding: 1em;
+    border: .5em solid darkred;
+}
+
+.tBuilds {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* justify-content: space-evenly; */
+    /* width: 45%; */
+    margin: 2em;
+}
+
+h2 {
+    color: whitesmoke;
+    font-weight: bolder;
+    margin-bottom: .5em;
+}
