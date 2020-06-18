@@ -41,7 +41,11 @@
             <div class="field">
                 <form id="addForm">
                     <div class="control inputLayout">
-                        <input class="input is-danger" type="text" placeholder="Input Name" id="inputField">
+                        
+                        <input class="input is-danger" type="text" placeholder="First Name" id="inputFirstField">
+                        
+                        <input class="input is-danger" type="text" placeholder="Last Name" id="inputLastField">
+                       
                         <button type="submit" class="button is-black is-medium" id="btn">
                             <span class="icon is-small"><i class="fas fa-check"></i></span>
                             <span>Add</span>
@@ -54,9 +58,11 @@
     </div>
 
     <!-- TABLES -->
+    <!-- <div class="peopleTables container"> -->
     <div class="peopleTables">
 
         <!-- Added Table -->
+
         <div class="tBuilds" id="addedPeople">
             <caption>
                 <h2>People Who <u>Have Not</u> Been Selected</h2>
@@ -64,7 +70,6 @@
             <table class="table table-borderless table-dark">
                 <thead class="bg-dark">
                     <tr>
-                        <!-- <th scope="col">#</th> -->
                         <th scope="col" class="text-white">Name</th>
                     </tr>
                 </thead>
@@ -83,7 +88,6 @@
             <table class="table table-borderless table-dark">
                 <thead>
                     <tr>
-                        <!-- <th scope="col">#</th> -->
                         <th scope="col">Name</th>
                     </tr>
                 </thead>
@@ -92,8 +96,10 @@
                 </tbody>
             </table>
         </div>
-
-        <button class="btn btn-warning text-danger" id="clearBTN">Clear Tables</button>
+        <div class="resetAndClearBtn">
+            <button class="btn btn-outline-warning" id="clearBTN">Clear Tables</button>
+            <button class="btn btn-outline-info" id="resetBTN">Reset Tables</button>
+        </div>
 
     </div>
 
