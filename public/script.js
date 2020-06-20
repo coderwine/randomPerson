@@ -18,6 +18,8 @@ const add_tb = document.getElementById('add-tbody');
 const selTB = document.getElementById('select-tbody');
 const clearBTN = document.getElementById('clearBTN');
 const resetBTN = document.getElementById('resetBTN');
+const addTableTitle = document.getElementById('studentsLeft');
+const selTableTitle = document.getElementById('studentsGone');
 
 //! EVENT LISTENERS
 randForm.addEventListener('submit', jumboDisplay);
@@ -34,15 +36,27 @@ console.log(totalPeople);
 let joke;
 
 //! FETCH
-const url = 'https://sv443.net/jokeapi/v2/joke/Programming,Miscellaneous?blacklistFlags=nsfw,religious,political,racist,sexist&type=single';
+// const url = 'https://sv443.net/jokeapi/v2/joke/Programming,Miscellaneous?blacklistFlags=nsfw,religious,political,racist,sexist&type=single';
+const url = 'https://official-joke-api.appspot.com/random_joke';
+// const url = 'https://icanhazdadjoke.com/';
+// const options = {
+//     headers: {
+//         User-Agent: 'My Library (https://github.com/coderwine/randomPerson)',
+//         Content-Type: 'application/json'
+//     }
+// }
 
 function fetchJoke() {
+    // fetch(url, options)
     fetch(url)
         .then(res => res.json())
         .then(data => makeJoke(data));
 
     function makeJoke(data) {
-        return joke = data.joke
+        console.log('MAKE JOKE FUNC: ', data)
+        // return joke = data.joke // used for jokeapi
+        return joke = `${data.setup}   ${data.punchline}` // needed for official-joke-api 
+        // return joke = `${data.setup}   ${data.punchline}` 
     }
 }
 
@@ -90,7 +104,7 @@ function addArrFunc(e) {
     inputFirst.value = '';
     inputLast.value = '';
 
-    addTableDisplay(addArr)
+    addTableDisplay(addArr);
 }
 
 function addTableDisplay(arr) {
@@ -104,6 +118,8 @@ function addTableDisplay(arr) {
         let addtd = document.createElement('td');
         
         addtd.textContent = e;
+        addTableTitle.textContent = 
+        addArr.length === 1 ? `There is only ${addArr.length} person.  Gonna be hard to make this Random...` :`There are ${addArr.length} people left to go.`
 
         addtr.appendChild(addtd);
         add_tb.appendChild(addtr);
@@ -127,6 +143,8 @@ function selectedArrTable() {
         let seltd = document.createElement('td');
         
         seltd.textContent = m;
+        selTableTitle.textContent = 
+        selectedArr.length === 1 ? `Only ${selectedArr.length} has gone.`: `${selectedArr.length} people have gone so far.`
 
         seltr.appendChild(seltd);
         selTB.appendChild(seltr);
@@ -161,3 +179,5 @@ function resetTables() {
     captioned.textContent = null;
 
 }
+
+console.log('delete this')

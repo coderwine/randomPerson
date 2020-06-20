@@ -13,7 +13,7 @@
 </head>
 
 <body class="bg-danger">
-    
+
     <div class="jumboAddAlign">
 
         <!-- CURRENTLY SELECTED PERSON DISPLAY / WITH PUSH TO END TABLE -->
@@ -41,11 +41,11 @@
             <div class="field">
                 <form id="addForm">
                     <div class="control inputLayout">
-                        
+
                         <input class="input is-danger" type="text" placeholder="First Name" id="inputFirstField">
-                        
+
                         <input class="input is-danger" type="text" placeholder="Last Name" id="inputLastField">
-                       
+
                         <button type="submit" class="button is-black is-medium" id="btn">
                             <span class="icon is-small"><i class="fas fa-check"></i></span>
                             <span>Add</span>
@@ -70,7 +70,7 @@
             <table class="table table-borderless table-dark">
                 <thead class="bg-dark">
                     <tr>
-                        <th scope="col" class="text-white">Name</th>
+                        <th scope="col" class="text-white" id="studentsLeft">Name</th>
                     </tr>
                 </thead>
                 <tbody id="add-tbody">
@@ -88,7 +88,7 @@
             <table class="table table-borderless table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">Name</th>
+                        <th scope="col" id="studentsGone">Name</th>
                     </tr>
                 </thead>
                 <tbody id="select-tbody">
@@ -108,6 +108,31 @@
     <!-- FOOTER -->
 
     <!-- ******************* JS ****************** -->
+    <!-- FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.3/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAdGWd2jId2ddmKEf-kX2_0D520B1itocY",
+            authDomain: "ejw-randomperson.firebaseapp.com",
+            databaseURL: "https://ejw-randomperson.firebaseio.com",
+            projectId: "ejw-randomperson",
+            storageBucket: "ejw-randomperson.appspot.com",
+            messagingSenderId: "1002175007842",
+            appId: "1:1002175007842:web:afe258baf5b04d06a3953b",
+            measurementId: "G-ZZ0GZ5LXSZ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
 
     <!-- ION ICONIC -->
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
