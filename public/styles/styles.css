@@ -1,8 +1,9 @@
 /* BULMA CSS */
-@import './node_modules/bulma/css/bulma-rtl.css';
-@import './node_modules/bulma/css/bulma-rtl.min.css';
-@import './node_modules/bulma/css/bulma.css';
-@import './node_modules/bulma/css/bulma.min.css';
+@import './bulma-rtl.css';
+@import './bulma-rtl.min.css';
+@import './bulma.css';
+@import './bulma.min.css';
+
 
 body{
     display: flex;
