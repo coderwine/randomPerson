@@ -75,6 +75,7 @@ function jumboDisplay(e) {
     console.log('Joke: ',joke)
 
     displayName.textContent = addArr[x];
+    displayName.id = addArr[x] == addArr[0] ? 'css-typed' : null
     
     addArr.splice(x, 1);
     
@@ -89,14 +90,24 @@ function jumboDisplay(e) {
 
 function addArrFunc(e) {
     e.preventDefault();
-
+        
     let first = inputFirst.value;
-    let last = inputLast.value;
+    let capFirst;
+    let last = inputLast.value
+    let capLast;
 
-    console.log(`${first} ${last}`);
-    console.log(first.length + last.length)
+    for(let i in first) {
+        i == 0 ? capFirst = first[i].toUpperCase() :
+        capFirst += first[i].toLowerCase()
+    }
 
-    name = `${first} ${last}`; 
+    for(let n in last) {
+        n == 0 ? capLast = last[n].toUpperCase() : capLast += last[n].toLowerCase();
+    }
+
+    // console.log(`${capFirst} ${capLast}`);
+
+    let name = `${capFirst} ${capLast}`; 
     addArr.push(name);
 
     console.log(`addArr: ${addArr}`);
@@ -179,5 +190,3 @@ function resetTables() {
     captioned.textContent = null;
 
 }
-
-console.log('delete this')
