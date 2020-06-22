@@ -12,6 +12,8 @@ body{
     justify-content: center;
 }
 
+/* DISPLAY NAME */
+
 .jumboAddAlign {
     display: flex;
     flex-direction: column;
@@ -23,6 +25,36 @@ body{
     background-color: black;
     border-radius: 0;
 }
+
+progress {
+    margin-top: 1em;
+}
+
+/* base for typewriter effect - found via CSS-Tricks*/
+#css-typed {
+    overflow: hidden; 
+    border-right: .15em solid whitesmoke; /* The typwriter cursor */
+    white-space: pre; /* Keeps the content on a single line */
+    /* margin: 0 auto; Gives that scrolling effect as the typing happens */
+    letter-spacing: .05em;
+    animation: 
+      typing 8.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: whitesmoke; }
+  }
+
+/* BUTTONS */
 
 #addtoDone {
     text-align: center;    
@@ -79,4 +111,20 @@ h2 {
 
 #resetBTN {
     background-color: rgba(48, 171, 253, 0.25);
+}
+
+/* FOOTER */
+
+footer {
+    /* margin-top: 2em; */
+    padding-top: 2em;
+    background-color: red;
+}
+
+footer .footInfo {
+    padding: 1em;
+}
+
+footer .footNotes {
+    height: 35vh;
 }

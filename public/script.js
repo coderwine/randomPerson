@@ -2,6 +2,7 @@
 // Currently Selected Person
 const displayName = document.getElementById('nameDisplay');
 const captioned = document.getElementById('displayCaption');
+const prog = document.querySelector('progress');
 
 // Random Person Button
 const randForm = document.getElementById('randomForm');
@@ -21,17 +22,20 @@ const resetBTN = document.getElementById('resetBTN');
 const addTableTitle = document.getElementById('studentsLeft');
 const selTableTitle = document.getElementById('studentsGone');
 
+// Dumb Modal
+const modal = document.getElementById('goatModal');
+
 //! EVENT LISTENERS
-randForm.addEventListener('submit', jumboDisplay);
+// randForm.addEventListener('submit', jumboDisplay);
+randForm.addEventListener('submit', quickCheck);
 addForm.addEventListener('submit', addArrFunc);
 clearBTN.addEventListener('click', clearTable);
 resetBTN.addEventListener('click', resetTables);
 
 let addArr = [];
 let selectedArr = [];
-let totalPeople = addArr.length + selectedArr.length;
 
-console.log(totalPeople);
+// console.log(totalPeople);
 
 let joke;
 
@@ -65,22 +69,46 @@ function fetchJoke() {
 
 //! SELECTED PERSON
 
-// Jumbotron
-function jumboDisplay(e) {
+// Jumbotron - RANDOM BTN SELECTION
+function quickCheck(e) {
     e.preventDefault();
+    console.log('addArr: ',addArr, 'selectedArr: ', selectedArr)
+
+    // addArr.length == selectedArr.length && addArr.length != 0 && selectedArr != 0 ? modalFun() : jumboDisplay();
+    addArr.length === 1 && selectedArr.length > addArr.length ? modalFun() : jumboDisplay();
+}
+
+function jumboDisplay(e) {
+    // e.preventDefault();
     fetchJoke();
 
+    // progress bar
+    let totalPeople = addArr.length + selectedArr.length;
+    let percent = Math.floor(((selectedArr.length + 1) / totalPeople)*100);
+    prog.value = percent;
+
+    if(addArr.length === 0){
+        alert('Zero is an infinit set of random nothingness all swimming in a soupy mud of wonder.  If there are no users, I\'d say it\'s pretty easy to randomly select.  Try resetting or clearing the tables.')
+    } else {
+        null
+    }
+
+    let firstCaption = `Odds were 1 out of ${addArr.length} and you nailed it!`
     let x = Math.floor(Math.random(0) * addArr.length);
     
     console.log('Joke: ',joke)
 
     displayName.textContent = addArr[x];
-    displayName.id = addArr[x] == addArr[0] ? 'css-typed' : null
-    
+    if (selectedArr.length == 0) {
+        displayName.id = 'css-typed';
+    } else {
+        displayName.id = 'nameDisplay';
+    }
+
     addArr.splice(x, 1);
     
-    selectedArr.length === 0 ? captioned.textContent = 'You have been chosen as the First... ' : addArr.length === 0 ? captioned.textContent = 'They say the best is last...  I guess we\'ll see' : addArr.length === 1 ? captioned.textContent = `I wonder who will be after you?  Looking at you ${addArr[0]}!` : captioned.textContent = joke;
-
+    selectedArr.length === 0 ? captioned.textContent = firstCaption : addArr.length === 0 ? captioned.textContent = 'They say the best is last...  I guess we\'ll see' : addArr.length === 1 ? captioned.textContent = `I wonder who will be after you?  Looking at you ${addArr[0]}!` : captioned.textContent = joke;
+    
     console.log('Updated addArr: ', addArr);
     addTableDisplay(addArr);
     selectedArrTable();
@@ -110,7 +138,7 @@ function addArrFunc(e) {
     let name = `${capFirst} ${capLast}`; 
     addArr.push(name);
 
-    console.log(`addArr: ${addArr}`);
+    // console.log(`addArr: ${addArr}`);
 
     inputFirst.value = '';
     inputLast.value = '';
@@ -139,11 +167,13 @@ function addTableDisplay(arr) {
 }
 
 function selectedArrTable() {
-    console.log(displayName.textContent)
+    
+    addArr.length === 0 ? addTableTitle.textContent = "No Name in the Hat... also, no hat." : null;
+
     let inputSelName = displayName.textContent;
 
     selectedArr.push(inputSelName);
-    console.log('selectedArr: ', selectedArr)
+    // console.log('selectedArr: ', selectedArr)
     
     while (selTB.firstChild) {
         selTB.removeChild(selTB.firstChild);
@@ -174,11 +204,16 @@ function clearTable() {
 
     displayName.textContent = 'I Hate Saying Goodbye... so I Won\'t'
     captioned.textContent = null;
+    addTableTitle.textContent = `Remember when there were ${addArr.length} names?  Those were good times.`
+    selTableTitle.textContent = `${addArr.length} - ${addArr.length} = a hungry Table.`;
+
+    addArr = [];
+    selectedArr = [];
 }
 
 function resetTables() {
     addArr = [ ...selectedArr];
-    console.log('Copied Array: ', addArr)
+    // console.log('Copied Array: ', addArr)
 
     addTableDisplay(addArr);
 
@@ -188,5 +223,16 @@ function resetTables() {
 
     displayName.textContent = 'Another Round?'
     captioned.textContent = null;
+    addTableTitle.textContent = `Rerack to ${addArr.length}!`
+    selTableTitle.textContent = `Ohh... let's go another ${addArr.length} Rounds!`;
 
+}
+
+function modalFun() {
+    // console.log('Modal hit');
+    modal.className = 'modal is-active'
+    setTimeout(function showGoat() {
+        modal.className = 'modal';
+        jumboDisplay();
+    }, 2000);
 }

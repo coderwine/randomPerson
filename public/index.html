@@ -18,8 +18,9 @@
 
         <!-- CURRENTLY SELECTED PERSON DISPLAY / WITH PUSH TO END TABLE -->
         <div class="jumbotron">
-            <h1 class="display-4 text-white" id="nameDisplay">Who's First Up for the Chopping Block?</h1>
+            <h1 class="display-4 text-white" id="nameDisplay">So,... who's First?</h1>
             <p class="lead text-white" id="displayCaption"></p>
+            <progress class="progress is-danger" value="0" max="100"></progress>
             <!-- <hr>
             <a class="btn btn-danger text-white btn-lg" id="addToDone" role="button" type="button">Done</a> -->
         </div>
@@ -42,9 +43,9 @@
                 <form id="addForm">
                     <div class="control inputLayout">
 
-                        <input class="input is-danger" type="text" placeholder="First Name" id="inputFirstField" autocomplete="off">
+                        <input class="input is-danger" type="text" placeholder="First Name" id="inputFirstField" autocomplete="off" required>
 
-                        <input class="input is-danger" type="text" placeholder="Last Name" id="inputLastField" autocomplete="off">
+                        <input class="input is-danger" type="text" placeholder="Last Name" id="inputLastField" autocomplete="off" required>
 
                         <button type="submit" class="button is-black is-medium" id="btn">
                             <span class="icon is-small"><i class="fas fa-check"></i></span>
@@ -103,9 +104,39 @@
 
     </div>
 
+    <!-- DUMB MODAL -->
+    <div class="modal" id="goatModal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <p class="image is-4by3">
+            <img src="https://placegoat.com/200" alt="goat image">
+          </p>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
 
 
     <!-- FOOTER -->
+    <!-- <footer class="bg-danger"> -->
+    <footer>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link text-dark active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Project Purpose</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Credits</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link text-dark" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+            </li>
+          </ul>
+          <div class="tab-content footNotes" id="myTabContent">
+            <div class="tab-pane footInfo fade text-white show active" id="home" role="tabpanel" aria-labelledby="home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veritatis laboriosam nostrum ratione consectetur pariatur itaque quasi in vero eveniet delectus dolorum, placeat aspernatur magnam culpa officiis nulla a inventore!</div>
+            <div class="tab-pane footInfo fade text-white" id="profile" role="tabpanel" aria-labelledby="profile-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illo necessitatibus adipisci distinctio. Quaerat dolore eius, aut, iusto ipsum sed tempore unde ut voluptate voluptatum, vero dicta dolorem rerum atque.</div>
+            <div class="tab-pane footInfo fade text-white" id="contact" role="tabpanel" aria-labelledby="contact-tab">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil eaque consequatur cum, ad sit illum, et incidunt voluptate ipsa esse odit molestiae ducimus quos omnis. Quas assumenda nulla maiores dolores?</div>
+          </div>
+      </footer>
 
     <!-- ******************* JS ****************** -->
     <!-- FIREBASE -->
