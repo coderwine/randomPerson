@@ -12,6 +12,10 @@ body{
     justify-content: center;
 }
 
+ol {
+    margin: .2em 2em;
+}
+
 /* DISPLAY NAME */
 
 .jumboAddAlign {
@@ -119,6 +123,7 @@ footer {
     /* margin-top: 2em; */
     padding-top: 2em;
     background-color: red;
+    bottom: 0;
 }
 
 footer .footInfo {
@@ -127,4 +132,28 @@ footer .footInfo {
 
 footer .footNotes {
     height: 35vh;
+}
+
+.logoDisplay {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: .5em;
+}
+
+.sizedLogos {
+    height: 75px;
+    width: 75px;
+    /* border: 2px solid black; */
+    margin: .15em;
+    border-radius: 200px;
+}
+
+.sizedLogos:hover {
+    box-shadow: 2px 0px 30px whitesmoke;
+}
+
+#cssTricks {
+    border: .2em solid black;
+    border-radius: 200px;
 }

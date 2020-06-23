@@ -14,6 +14,26 @@
 
 <body class="bg-danger">
 
+    <div class="modal is-active" id="loadModal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head bg-danger">
+            <p class="modal-card-title text-white">Randomize Your Group!</p>
+            <button class="delete" aria-label="close" id="modalClose"></button>
+          </header>
+          <section class="modal-card-body">
+            Thank you for taking the time to use my random person picker. <br>  The concept of this application is simple:
+                <ol>
+                    <li>Add Names to the table.</li>
+                    <li>Click the Random Button to see who get's picked.</li>
+                    <li>Clear to generate a new table or Reset to go another round!</li>
+                </ol>
+            If you have any questions, please feel free to reach out to me per the contact section at the bottom of the page. <br>
+            Thanks again and Enjoy!
+          </section>
+        </div>
+      </div>
+
     <div class="jumboAddAlign">
 
         <!-- CURRENTLY SELECTED PERSON DISPLAY / WITH PUSH TO END TABLE -->
@@ -118,23 +138,101 @@
 
 
     <!-- FOOTER -->
-    <!-- <footer class="bg-danger"> -->
-    <footer>
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <footer class="bg-danger">
+    <!-- <footer> -->
+        <ul class="nav nav-tabs container" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link text-dark active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Project Purpose</a>
+              <a class="nav-link text-white active bg-dark" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Project Purpose</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link text-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Credits</a>
+              <a class="nav-link text-white bg-dark" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Credits</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link text-dark" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+              <a class="nav-link text-white bg-dark" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
             </li>
           </ul>
           <div class="tab-content footNotes" id="myTabContent">
-            <div class="tab-pane footInfo fade text-white show active" id="home" role="tabpanel" aria-labelledby="home-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae veritatis laboriosam nostrum ratione consectetur pariatur itaque quasi in vero eveniet delectus dolorum, placeat aspernatur magnam culpa officiis nulla a inventore!</div>
-            <div class="tab-pane footInfo fade text-white" id="profile" role="tabpanel" aria-labelledby="profile-tab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illo necessitatibus adipisci distinctio. Quaerat dolore eius, aut, iusto ipsum sed tempore unde ut voluptate voluptatum, vero dicta dolorem rerum atque.</div>
-            <div class="tab-pane footInfo fade text-white" id="contact" role="tabpanel" aria-labelledby="contact-tab">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil eaque consequatur cum, ad sit illum, et incidunt voluptate ipsa esse odit molestiae ducimus quos omnis. Quas assumenda nulla maiores dolores?</div>
+            <div class="tab-pane footInfo fade text-white show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <ul>
+                    <li>Created by: Eric Winebrenner 2020&copy;</li>
+                    <li class="text-dark">This site was a lot of fun to play with and create.  As a small project, I found that this helped me solidify various concepts in my understanding of DOM manipulation all while giving me an opportunity to practice working within new frameworks.  If you're interested in my <a href="#" target="_blank" class="text-white">Github Repo</a>, please check it out. <br> Thanks for checking this project out!</li>
+                </ul>
+            </div>
+            <div class="tab-pane footInfo fade text-white" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="logoDisplay">
+                    <div class="sizedLogos">
+                        <a href="https://elevenfifty.org/" target="_blank">
+                            <img src="https://elevenfifty.org/wp-content/uploads/2019/03/mobile-shield.png" alt="Eleven Fifty Academy Logo">
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://firebase.google.com/" target="_blank">
+                            <img src="./assets/logo-firebase.svg" alt="Firebase logo">
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://getbootstrap.com/" target="_blank">
+                            <svg class="bi bi-bootstrap-fill" width="100%" height="100%" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
+                              </svg>
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://bulma.io/" target="_blank">
+                            <img src="./assets/website-design.svg" alt="Logo to Link for Bulma">
+                        </a>
+                    </div>
+                    <!-- <div class="sizedLogos">
+                        <a href="https://developer.mozilla.org/en-US/" target="_blank">
+                            <img src="./assets/logo-javascript.svg" alt="javascript logo">
+                        </a>
+                    </div> -->
+                    <div class="sizedLogos">
+                        <a href="https://ionicons.com/" target="_blank">
+                            <img src="./assets/logo-ionic.svg" alt="ionic logo"> 
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://css-tricks.com/" target="_blank">
+                            <img src="./assets/css-tricks-star.svg" alt="CSS-Tricks Logo" id="cssTricks">
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="#" target="_blank">
+                            <img src="./assets/joke.svg" alt="JokeAPI">
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://placegoat.com/" target="_blank">
+                            <img src="./assets/goat.svg" alt="GoatAPI">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane footInfo fade text-white logoDisplay" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="logoDisplay">
+                    <div class="sizedLogos">
+                        <a href="https://www.linkedin.com/in/ewine/" target="_blank">
+                            <img src="./assets/logo-linkedin.svg" alt="LinkedIn Logo">
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://coderwine.github.io/" target="_blank">
+                            <img src="./assets/person-circle.svg" alt="EJW Portfolio">
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://twitter.com/coderwine" target="_blank">
+                            <img src="./assets/logo-twitter.svg" alt="Twitter Logo">
+                        </a>
+                    </div>
+                    <div class="sizedLogos">
+                        <a href="https://github.com/coderwine" target="_blank">
+                            <img src="./assets/logo-github.svg" alt="Github Logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
           </div>
       </footer>
 

@@ -1,4 +1,8 @@
 //! KNOWN ELEMENTS
+// On Load Modal
+const onLoadModal = document.getElementById('loadModal');
+const closeLoad = document.getElementById('modalClose');
+
 // Currently Selected Person
 const displayName = document.getElementById('nameDisplay');
 const captioned = document.getElementById('displayCaption');
@@ -27,6 +31,7 @@ const modal = document.getElementById('goatModal');
 
 //! EVENT LISTENERS
 // randForm.addEventListener('submit', jumboDisplay);
+closeLoad.addEventListener('click', loadModal);
 randForm.addEventListener('submit', quickCheck);
 addForm.addEventListener('submit', addArrFunc);
 clearBTN.addEventListener('click', clearTable);
@@ -38,6 +43,13 @@ let selectedArr = [];
 // console.log(totalPeople);
 
 let joke;
+
+//! LOAD MODAL
+function loadModal(e) {
+    e.preventDefault();
+    onLoadModal.className = 'modal'
+    onLoadModal.style = 'display: none;'
+}
 
 //! FETCH
 // const url = 'https://sv443.net/jokeapi/v2/joke/Programming,Miscellaneous?blacklistFlags=nsfw,religious,political,racist,sexist&type=single';
@@ -57,7 +69,7 @@ function fetchJoke() {
         .then(data => makeJoke(data));
 
     function makeJoke(data) {
-        console.log('MAKE JOKE FUNC: ', data)
+        // console.log('MAKE JOKE FUNC: ', data)
         // return joke = data.joke // used for jokeapi
         return joke = `${data.setup}   ${data.punchline}` // needed for official-joke-api 
         // return joke = `${data.setup}   ${data.punchline}` 
@@ -72,7 +84,7 @@ function fetchJoke() {
 // Jumbotron - RANDOM BTN SELECTION
 function quickCheck(e) {
     e.preventDefault();
-    console.log('addArr: ',addArr, 'selectedArr: ', selectedArr)
+    // console.log('addArr: ',addArr, 'selectedArr: ', selectedArr)
 
     // addArr.length == selectedArr.length && addArr.length != 0 && selectedArr != 0 ? modalFun() : jumboDisplay();
     addArr.length === 1 && selectedArr.length > addArr.length ? modalFun() : jumboDisplay();
@@ -133,12 +145,8 @@ function addArrFunc(e) {
         n == 0 ? capLast = last[n].toUpperCase() : capLast += last[n].toLowerCase();
     }
 
-    // console.log(`${capFirst} ${capLast}`);
-
     let name = `${capFirst} ${capLast}`; 
     addArr.push(name);
-
-    // console.log(`addArr: ${addArr}`);
 
     inputFirst.value = '';
     inputLast.value = '';
@@ -173,7 +181,6 @@ function selectedArrTable() {
     let inputSelName = displayName.textContent;
 
     selectedArr.push(inputSelName);
-    // console.log('selectedArr: ', selectedArr)
     
     while (selTB.firstChild) {
         selTB.removeChild(selTB.firstChild);
@@ -213,7 +220,6 @@ function clearTable() {
 
 function resetTables() {
     addArr = [ ...selectedArr];
-    // console.log('Copied Array: ', addArr)
 
     addTableDisplay(addArr);
 
@@ -229,7 +235,6 @@ function resetTables() {
 }
 
 function modalFun() {
-    // console.log('Modal hit');
     modal.className = 'modal is-active'
     setTimeout(function showGoat() {
         modal.className = 'modal';
