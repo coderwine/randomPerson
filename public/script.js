@@ -21,13 +21,13 @@ const btn = document.getElementById('btn');
 // Tables
 const add_tb = document.getElementById('add-tbody');
 const selTB = document.getElementById('select-tbody');
-// let delBTN;
+// let delBTN;  //may add individual delete buttons to remove from "haven't gone" table
 const clearBTN = document.getElementById('clearBTN');
 const resetBTN = document.getElementById('resetBTN');
 const addTableTitle = document.getElementById('studentsLeft');
 const selTableTitle = document.getElementById('studentsGone');
 
-// Dumb Modal
+// Goat Modal
 const modal = document.getElementById('goatModal');
 
 //! EVENT LISTENERS
@@ -44,8 +44,6 @@ resetBTN.addEventListener('click', resetTables);
 
 let addArr = [];
 let selectedArr = [];
-
-// console.log(totalPeople);
 
 let joke;
 
@@ -74,7 +72,6 @@ function fetchJoke() {
         .then(data => makeJoke(data));
 
     function makeJoke(data) {
-        // console.log('MAKE JOKE FUNC: ', data)
         // return joke = data.joke // used for jokeapi
         return joke = `${data.setup}   ${data.punchline}` // needed for official-joke-api 
         // return joke = `${data.setup}   ${data.punchline}` 
@@ -86,9 +83,7 @@ function fetchJoke() {
 // Jumbotron - RANDOM BTN SELECTION
 function quickCheck(e) {
     e.preventDefault();
-    // console.log('addArr: ',addArr, 'selectedArr: ', selectedArr)
 
-    // addArr.length == selectedArr.length && addArr.length != 0 && selectedArr != 0 ? modalFun() : jumboDisplay();
     addArr.length === 1 && selectedArr.length > addArr.length ? modalFun() : jumboDisplay();
 }
 
