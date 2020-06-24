@@ -15,11 +15,10 @@ Deployed link: https://ejw-randomperson.web.app/
 
 TO-DO:
  - Need to fix the Joke API - would like to utilize the dadjoke api due to content that coule be questionable within the joke-api currently working.
- - Type Effect doesn't allow for long text on mobile devices.
- - Footer Credits and connections
-    - joke API is the only icon without a link.
- - Add a remove button on names within the tables.  
+ 
 
 Stretch-Goal To-Do:
  - Propercase names that have unique casing: 
     - ex: O'Leary, McDonald, etc
+ - Add a remove button on names within the tables.  
+

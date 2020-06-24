@@ -21,6 +21,7 @@ const btn = document.getElementById('btn');
 // Tables
 const add_tb = document.getElementById('add-tbody');
 const selTB = document.getElementById('select-tbody');
+// let delBTN;
 const clearBTN = document.getElementById('clearBTN');
 const resetBTN = document.getElementById('resetBTN');
 const addTableTitle = document.getElementById('studentsLeft');
@@ -36,6 +37,10 @@ randForm.addEventListener('submit', quickCheck);
 addForm.addEventListener('submit', addArrFunc);
 clearBTN.addEventListener('click', clearTable);
 resetBTN.addEventListener('click', resetTables);
+// delBTN.addEventListener('click', 
+//     function clearName() {
+//         console.log('button was clicked')
+// })
 
 let addArr = [];
 let selectedArr = [];
@@ -75,9 +80,6 @@ function fetchJoke() {
         // return joke = `${data.setup}   ${data.punchline}` 
     }
 }
-
-// fetchJoke();
-
 
 //! SELECTED PERSON
 
@@ -163,11 +165,16 @@ function addTableDisplay(arr) {
     arr.forEach(e => {
         let addtr = document.createElement('tr');
         let addtd = document.createElement('td');
+        // delBTN = document.createElement('button');
         
         addtd.textContent = e;
         addTableTitle.textContent = 
         addArr.length === 1 ? `There is only ${addArr.length} person.  Gonna be hard to make this Random...` :`There are ${addArr.length} people left to go.`
 
+        // delBTN.textContent = 'X';
+        // delBTN.className = "delPerson btn btn-outline-warning btn-danger"
+
+        // addtd.appendChild(delBTN);
         addtr.appendChild(addtd);
         add_tb.appendChild(addtr);
     })
@@ -198,6 +205,7 @@ function selectedArrTable() {
         selTB.appendChild(seltr);
     })
 }
+
 
 function clearTable() {
 

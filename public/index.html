@@ -38,11 +38,9 @@
 
         <!-- CURRENTLY SELECTED PERSON DISPLAY / WITH PUSH TO END TABLE -->
         <div class="jumbotron">
-            <h1 class="display-4 text-white" id="nameDisplay">So,... who's First?</h1>
+            <h1 class="display-4 text-white col-12" id="nameDisplay">So,... who's First?</h1>
             <p class="lead text-white" id="displayCaption"></p>
             <progress class="progress is-danger" value="0" max="100"></progress>
-            <!-- <hr>
-            <a class="btn btn-danger text-white btn-lg" id="addToDone" role="button" type="button">Done</a> -->
         </div>
 
         <!-- RANDOM PERSON BUTTON -->
@@ -96,6 +94,14 @@
                 </thead>
                 <tbody id="add-tbody">
                     <!-- INFO ADDED HERE: addArr -->
+
+                    <!-- TESTING -->
+                    <!-- <tr>
+                        <td>Eric Winebrenner
+                            <button class="delPerson btn btn-outline-warning btn-danger">X</button>
+                        </td>
+                    </tr> -->
+
                 </tbody>
             </table>
         </div>
@@ -138,8 +144,8 @@
 
 
     <!-- FOOTER -->
-    <footer class="bg-danger">
-    <!-- <footer> -->
+    <!-- <footer class="bg-danger"> -->
+    <footer>
         <ul class="nav nav-tabs container" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <a class="nav-link text-white active bg-dark" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Project Purpose</a>
@@ -154,13 +160,13 @@
           <div class="tab-content footNotes" id="myTabContent">
             <div class="tab-pane footInfo fade text-white show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <ul>
-                    <li>Created by: Eric Winebrenner 2020&copy;</li>
-                    <li class="text-dark">This site was a lot of fun to play with and create.  As a small project, I found that this helped me solidify various concepts in my understanding of DOM manipulation all while giving me an opportunity to practice working within new frameworks.  If you're interested in my <a href="#" target="_blank" class="text-white">Github Repo</a>, please check it out. <br> Thanks for checking this project out!</li>
+                    <li class="text-danger">Created by: Eric Winebrenner 2020&copy;</li>
+                    <li class="text-white">This site was a lot of fun to play with and create.  As a small project, I found that this helped me solidify various concepts in my understanding of DOM manipulation all while giving me an opportunity to practice working within new frameworks.  If you're interested in my <a href="#" target="_blank" class="text-danger">Github Repo</a>, please check it out. <br> Thanks for checking this project out!</li>
                 </ul>
             </div>
             <div class="tab-pane footInfo fade text-white" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="logoDisplay">
-                    <div class="sizedLogos">
+                    <div class="sizedLogos" id="efa">
                         <a href="https://elevenfifty.org/" target="_blank">
                             <img src="https://elevenfifty.org/wp-content/uploads/2019/03/mobile-shield.png" alt="Eleven Fifty Academy Logo">
                         </a>
@@ -172,7 +178,7 @@
                     </div>
                     <div class="sizedLogos">
                         <a href="https://getbootstrap.com/" target="_blank">
-                            <svg class="bi bi-bootstrap-fill" width="100%" height="100%" viewBox="0 0 16 16" fill="black" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="bi bi-bootstrap-fill" width="100%" height="100%" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
                               </svg>
                         </a>
@@ -198,7 +204,7 @@
                         </a>
                     </div>
                     <div class="sizedLogos">
-                        <a href="#" target="_blank">
+                        <a href="https://sv443.net/jokeapi/v2/" target="_blank">
                             <img src="./assets/joke.svg" alt="JokeAPI">
                         </a>
                     </div>
@@ -213,7 +219,7 @@
                 <div class="logoDisplay">
                     <div class="sizedLogos">
                         <a href="https://www.linkedin.com/in/ewine/" target="_blank">
-                            <img src="./assets/logo-linkedin.svg" alt="LinkedIn Logo">
+                            <img src="./assets/linkedin.svg" alt="LinkedIn Logo">
                         </a>
                     </div>
                     <div class="sizedLogos">
