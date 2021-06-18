@@ -148,6 +148,7 @@ function addArrFunc(e) {
     inputFirst.value = '';
     inputLast.value = '';
 
+    inputFirst.focus();
     addTableDisplay(addArr);
 }
 
